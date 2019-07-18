@@ -1,0 +1,27 @@
+<mat-drawer-container class="container" autosize>
+     <mat-drawer #drawer class='sidenav' > 
+       <button mat-button color='primary' routerLink="/permanent" (click)="drawer.toggle()">Bac Permanent</button>
+       <button mat-button color='primary' routerLink="/neuv" (click)="drawer.toggle()">Neuvieme</button>
+       <button mat-button color='primary' routerLink="/nsiv" (click)="drawer.toggle()">Bac Unique</button>
+       <button mat-button color='primary' routerLink="/reg" (click)="drawer.toggle()">Bac Regulier</button>
+       <button mat-button color='primary' routerLink="/sec" (click)="drawer.toggle()"> Seconde</button>
+      </mat-drawer>
+     <mat-drawer-content>
+        <mat-toolbar  color="primary">  
+            <mat-toolbar-row>
+                <button mat-icon-button (click)="drawer.toggle()">
+                    <mat-icon>menu</mat-icon>
+                  </button>
+                  <span>Bureau National des Examens d'Etat</span> 
+                  <span class="spacer"></span>  
+                    <span class="c">Système d'Inscription en ligne aux Examens d'Etat</span>       
+          </mat-toolbar-row>
+                <!-- <span class="c">Système d'Inscription aux Examens d'Etat</span> -->
+         </mat-toolbar>
+
+        
+       <router-outlet></router-outlet>
+     </mat-drawer-content>
+</mat-drawer-container>
+
+

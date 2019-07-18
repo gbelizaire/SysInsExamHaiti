@@ -1,0 +1,14 @@
+th mat-header-cell{
+    font-weight: bold;
+    font-size: 20px;
+}
+.f{margin-bottom: 20px;}
+
+.rowmouseon:hover{
+    /* background-color: rgb(203, 247, 197); */
+    background-color:lightskyblue;
+     /* rgba(178, 203, 231, 0.87); */
+    cursor: pointer;
+}
+
+

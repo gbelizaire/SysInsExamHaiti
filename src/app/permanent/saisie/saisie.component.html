@@ -1,0 +1,84 @@
+<div class="saisiePermanent">
+       <mat-card class="matricule">
+        <mat-card-content > 
+          <mat-form-field>
+            <input matInput 
+                    #Matricule 
+                    name="Matricule" 
+                    placeholder="Maticule Philo"
+                    minlength="3" 
+                    maxlength="10" 
+                    autofocus="autofocus"
+                    (keydown.enter) = "Nom.focus()"
+                    
+                   
+                    (focus)="$event.target.value='';candidatchoisi=null; contientErreur= false;infoTrouvee=false;false;" 
+                    class="sai_matricule"
+                    >
+                     <!-- 
+                         (keydown.enter) = "Matricule.blur();doSomething(Matricule)"
+                         (keydown.enter) = "Nom.focus()" 
+                        (keydown.enter) = "Matricule.blur();doSomething(Matricule)"
+                      -->
+          </mat-form-field>
+          <span class="espas"></span>
+          <mat-form-field>
+            <input matInput 
+                    #Nom 
+                    name="Nom" 
+                    placeholder="NOM"
+                    minlength="3" 
+                    class="sai_nom"
+                    (focus)="$event.target.value='';candidatchoisi=null; contientErreur= false;infoTrouvee=false;false;" 
+                    >
+                     <!-- (keydown.enter) = "Matricule.blur();doSomething(Matricule)"  -->
+          </mat-form-field>
+          <button mat-icon-button (click)="Matricule.blur();doSomething(Matricule,Nom)">
+            <mat-icon>search</mat-icon>
+          </button>
+       </mat-card-content>
+        </mat-card>
+   </div>
+
+   <!--######   Partie Affichage des Infos ######  -->   
+<div class="tableInfo" *ngIf="infoTrouvee">
+  <mat-card class="candidats">
+    <mat-card-content fxFlexFill *ngIf="infoTrouvee">
+       <candidat-permanent [personnes]="personnes" (candidatselectionne)="AfficheCandidatSelectionne($event)"></candidat-permanent>           
+     </mat-card-content>
+  </mat-card>
+   <mat-card  class="info" id="info" *ngIf="candidatchoisi">
+      <p class="bun_sigle">B U N E X E</p> 
+      <p class="bun">Bureau National des Examens d'Etat</p>
+      <p class="ligne">--------------------------------------------</p>
+    <p class="titre">MATRICULE</p> 
+    <p class="donnees">{{candidatchoisi.Matricule}}</p>
+    <p class="titre">NOM</p> 
+    <p class="donnees">{{candidatchoisi.nom}}</p>
+    <p class="titre">PRENOM</p>
+    <p class="donnees">{{candidatchoisi.prenom}}</p>
+    <p class="titre">SEXE</p>
+    <p class="donnees">{{candidatchoisi.sexe=="1"? "Masculin":"Feminin"}}</p>
+    <p class="titre">DATE DE NAISSANCE</p>
+    <p class="donnees">{{candidatchoisi.dateNaiss}}</p>
+    <p class="titre">ANNEE SCOLAIRE</p>
+    <p class="donnees">{{candidatchoisi.Annee}}</p>
+    <p class="titre">SESSION</p>
+    <p class="donnees">{{candidatchoisi.Session}}</p>
+    <p class="titre">SECTION</p>
+    <p class="donnees">{{candidatchoisi.Section}}</p>
+    <p class="titre">NOTE TOTALE</p>
+    <p class="donnees">{{ candidatchoisi.TotNotes ? candidatchoisi.TotNotes:" 0 " }} / {{candidatchoisi.TotCoef ? candidatchoisi.TotCoef:""}}</p>
+    <p class="titre">MENTION</p>
+    <p class="donnees"> {{ candidatchoisi.Mention ? candidatchoisi.Mention:"" }}</p>
+     <!-- <span>{{candidatchoisi.Matricule}}</span> -->
+     <div class="imprimer" (click)="Imprimer()">
+       <button mat-icon-button >
+       <mat-icon>printer</mat-icon>
+     </button>
+     </div>
+     <p class="dat_">Imprimé le : {{ dd }}</p>
+   </mat-card>
+   </div>
+  
+   

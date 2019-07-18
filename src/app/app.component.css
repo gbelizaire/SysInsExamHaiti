@@ -1,0 +1,51 @@
+.container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    padding: 0;
+    width:100%;
+    max-width: 100%;;
+
+}
+.mat-drawer-container{
+    margin: 0;
+    padding: 0;
+    width:100%;
+    max-width: 100%;
+    
+    border: 1px solid blue;
+}
+.container .mat-drawer {
+    min-width: 200px;
+    padding-left: 4px;
+   
+}
+
+.container .mat-drawer .mat-button {
+    display: block;
+    width: 100%;
+    text-align: left;
+}
+
+.container .mat-drawer .mat-button:hover {
+    background-color: lightskyblue;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+.c{
+    font-size: 12px;
+    font-style: italic;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    bottom:0;
+    right:0;
+    text-align: right
+}
+.mat-toolbar{
+  height: 14px;
+}

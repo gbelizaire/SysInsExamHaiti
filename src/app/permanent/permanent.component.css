@@ -1,0 +1,11 @@
+.spacer {
+    flex: 1 1 auto;
+}
+.c{
+    font-size: 16px;
+    font-style: italic;
+    font-weight: bolder;
+    color:blue;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: right
+}
